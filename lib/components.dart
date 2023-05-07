@@ -18,28 +18,25 @@ class CustomModalButton extends StatelessWidget {
     return Obx(
       () => Padding(
         padding: const EdgeInsets.only(right: 16, bottom: 24),
-        child: Container(
-          height: 52,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            color: yearIndexController.value == index
+        child: TextButton(
+          style: TextButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+            fixedSize: const Size.fromHeight(52),
+            backgroundColor: yearIndexController.value == index
                 ? const Color(0xff2BB8D6)
                 : const Color(0xff9A9A9A).withOpacity(0.1),
           ),
-          child: TextButton(
-            onPressed: () {
-              yearIndexController.value = index;
-            },
-            child: Text(
-              buttonName,
-              style: TextStyle(
-                  color: yearIndexController.value == index
-                      ? Colors.white
-                      : const Color(0xff9A9A9A),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500),
-            ),
+          onPressed: () {
+            yearIndexController.value = index;
+          },
+          child: Text(
+            buttonName,
+            style: TextStyle(
+                color: yearIndexController.value == index
+                    ? Colors.white
+                    : const Color(0xff9A9A9A),
+                fontSize: 14,
+                fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -62,26 +59,23 @@ class TermButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Container(
-        height: 40,
-        width: 116,
-        decoration: BoxDecoration(
-          color: indexController.value == index
+      () => TextButton(
+        style: TextButton.styleFrom(
+          fixedSize: const Size(116, 40),
+          backgroundColor: indexController.value == index
               ? const Color(0xff2BB8D6)
               : Colors.white,
-          borderRadius: BorderRadius.circular(8),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
-        child: TextButton(
-          onPressed: () {
-            indexController.value = index;
-          },
-          child: Text(
-            termName,
-            style: TextStyle(
-              color: indexController.value == index
-                  ? Colors.white
-                  : const Color(0xff30323D),
-            ),
+        onPressed: () {
+          indexController.value = index;
+        },
+        child: Text(
+          termName,
+          style: TextStyle(
+            color: indexController.value == index
+                ? Colors.white
+                : const Color(0xff30323D),
           ),
         ),
       ),

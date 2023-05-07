@@ -84,7 +84,8 @@ class Result extends StatelessWidget {
                                     const Divider(
                                         height: 2, color: Colors.grey),
                                     Padding(
-                                      padding: const EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 24.0, horizontal: 16),
                                       child: Wrap(
                                         children: [
                                           CustomModalButton(
@@ -167,7 +168,6 @@ class Result extends StatelessWidget {
                           ),
                         ),
                       ),
-                      //
                       const SizedBox(width: 16)
                     ],
                   ),
